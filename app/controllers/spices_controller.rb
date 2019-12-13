@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class SpicesController < ApplicationController
-  before_action :set_spice, only: %i[show update destroy]
+class SpicesController < OpenReadController
+  before_action :set_spice, only: %i[update destroy]
 
   # GET /spices
   def index
@@ -17,6 +17,7 @@ class SpicesController < ApplicationController
   # POST /spices
   def create
     @spice = Spice.new(spice_params)
+    @spice = current_user.spices.build(spice_params)
 
     if @spice.save
       render json: @spice, status: :created, location: @spice
@@ -37,13 +38,14 @@ class SpicesController < ApplicationController
   # DELETE /spices/1
   def destroy
     @spice.destroy
+    head :no_content
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_spice
-    @spice = Spice.find(params[:id])
+    @spice = current_user.spices.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
