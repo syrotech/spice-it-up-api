@@ -8,6 +8,7 @@ curl "https://young-beach-16870.herokuapp.com/spices" \
       "origin": "'"${ORIGIN}"'",
       "culinary_use": "'"${CULINARY_USE}"'",
       "weight": "'"${WEIGHT}"'",
-      "price": "'"${PRICE}"'"
+      "price": "'"${PRICE}"'",
+      "user_id": "'"${USER_ID}"'"
     }
   }'
