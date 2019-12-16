@@ -16,7 +16,6 @@ class SpicesController < OpenReadController
 
   # POST /spices
   def create
-    @spice = Spice.new(spice_params)
     @spice = current_user.spices.build(spice_params)
 
     if @spice.save
