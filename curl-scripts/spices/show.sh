@@ -1,2 +1,9 @@
-curl "https://young-beach-16870.herokuapp.com/spices/${ID}" \
-  --include
+  # Ex: TOKEN=tokengoeshere ID=idgoeshere sh curl-scripts/examples/show.sh
+
+  curl "http://localhost:4741/spices/${ID}" \
+    --include \
+    --request GET \
+    --header "Content-Type: application/json" \
+    --header "Authorization: Token token=${TOKEN}" \
+
+  echo

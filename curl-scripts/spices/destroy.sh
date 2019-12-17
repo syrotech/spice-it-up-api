@@ -1,3 +1,8 @@
-curl "https://young-beach-16870.herokuapp.com/spices/${ID}" \
+# Ex: ID=idgoeshere TOKEN=tokengoeshere sh curl-scripts/examples/destroy.sh
+
+curl "http://localhost:4741/spices/${ID}" \
   --include \
-  --request DELETE
+  --request DELETE \
+  --header "Authorization: Token token=${TOKEN}" \
+
+  echo

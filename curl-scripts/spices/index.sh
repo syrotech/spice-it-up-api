@@ -1,2 +1,7 @@
-curl "https://young-beach-16870.herokuapp.com/spices" \
-  --include
+curl "http://localhost:4741/spices" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token=${TOKEN}" \
+  --header "Content-Type: application/json" \
+
+echo
