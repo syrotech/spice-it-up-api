@@ -50,6 +50,6 @@ class SpicesController < OpenReadController
   # Only allow a trusted parameter "white list" through.
   def spice_params
     params.require(:spice).permit(:name, :origin, :culinary_use, :weight, :price,
-                                  :user_id, :imageurl)
+                                  :user_id, :imageurl, :substitution)
   end
 end
